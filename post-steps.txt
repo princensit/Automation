@@ -1,0 +1,66 @@
+Post steps:
+# User Accounts -> Show my login name in menu bar
+# Show weekday, date, month and week number
+# Security & Privacy -> Files & Applications -> OFF
+# Security & Privacy -> Search -> OFF
+# Keyboard -> Launchers -> Home Folder (Super+E)
+# Appearance -> Behavior -> Enable workspaces
+# Battery -> show percentage
+# Change desktop background
+# Default Applications -> Music, Videos -> VLC
+# Softwares & Updates -> Weekly
+# Startup Applications:
+## Disable -> Backup Monitor, Onboard, Orca Screen reader
+## Add -> Artha
+# Login to chrome to sync up bookmarks and others
+# Sublime Text 3:
+## Add key, if applicable
+## Plugins:
+### Case Conversion
+### Compare Side-By-Side
+### Javascript Beautify
+### JsFormat
+### Side Bar
+### Text Pastry
+### Word Count
+### orgmode
+## View side bar
+# Beyond Compare 3
+## Add key if applicable
+# PostgreSQL
+## sudo su - postgres
+## psql -U postgres -d template1 -c "ALTER USER postgres WITH PASSWORD '<password>'"
+## exit
+## sudo vi /etc/postgresql/9.6/main/pg_hba.conf
+## local   all  postgres   trust
+## sudo /etc/init.d/postgresql restart
+# Opera VPN enable
+# IntelliJ IDEA
+## Create desktop entry for IntelliJ IDEA
+## Activate license, if applicable
+## Install plugins: Lombok, Eclipse Code Formatter, .ignore, BashSupport, NodeJS, Python, Ruby, String Manipulation
+# mysql_secure_installation
+# Skype -> close to tray and Launch at login
+# Indicator multiload -> show memory usage
+# Systat
+## Update /etc/default/sysstat
+### Change ENABLED="false" to ENABLED="true"
+## Update /etc/cron.d/sysstat to
+### */5 * * * * root command -v debian-sa1 > /dev/null && debian-sa1 1 1
+## sudo service sysstat restart
+# Increase file descriptor limit
+## Update /etc/security/limits.conf
+### *  soft nofile     20480
+### *  hard nofile     20480
+### root    soft nofile     20480
+### root    hard nofile     20480
+# VLC - Enable advanced controls
+# Update /etc/hosts
+## 127.0.0.1       localhost localhost.localdomain
+## 127.0.0.1       file.read.com
+# sudo chown -R $USER:$USER .oh-my-zsh .zshrc .zsh_history .zsh-update
+# Update .bashrc
+# Update .profile
+## export IBUS_ENABLE_SYNC_MODE=1
+# Update .zshrc
+## plugins=(mvn git git-extras colored-man-pages z aws sudo pip)
