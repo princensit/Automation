@@ -1,0 +1,45 @@
+Pre steps:
+# Software & Updates
+## Check all under Ubuntu Software and Other Software
+# Download following packages
+Downloads/
+└── Softwares
+    ├── Apache Maven
+    │   └── apache-maven-3.5.0-bin.tar.gz
+    ├── Apache Tomcat
+    │   ├── apache-tomcat-7.0.79.tar.gz
+    │   └── apache-tomcat-8.5.16.tar.gz
+    ├── Beyond Compare
+    │   └── bcompare-3.3.12.18414_i386.deb
+    ├── DBVisualizer
+    │   └── dbvis_linux_9_5_7.deb
+    ├── Genymotion
+    │   └── genymotion-2.9.0-linux_x64.bin
+    ├── Google Chrome
+    │   └── google-chrome-stable_current_amd64.deb
+    ├── IntelliJ Idea
+    │   └── ideaIU-2017.1.5.tar.gz
+    ├── JDK
+    │   ├── jdk-7u79-linux-x64.tar.gz
+    │   └── jdk-8u131-linux-x64.tar.gz
+    ├── LibreOffice
+    │   └── LibreOffice_5.3.4_Linux_x86-64_deb.tar.gz
+    ├── Master PDF Editor
+    │   └── master-pdf-editor-4.2.68_qt5.amd64.deb
+    ├── Metasploit
+    │   └── metasploit-latest-linux-x64-installer.run
+    ├── Nmap
+    │   └── nmap-7.40.tar.bz2
+    ├── Skype
+    │   └── skypeforlinux-64.deb
+    ├── Stacer
+    │   └── stacer_1.0.7_amd64.deb
+    ├── Sublime Text 3
+    │   ├── Default (Linux).sublime-keymap
+    │   └── Preferences.sublime-settings
+    ├── TeamViewer
+    │   └── teamviewer_12.0.76279_i386.deb
+    ├── Terminator
+    │   └── config
+    └── WebTorrent
+        └── webtorrent-desktop_0.18.0-1_amd64.deb
