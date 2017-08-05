@@ -13,6 +13,9 @@ Post steps:
 ## Disable -> Backup Monitor, Onboard, Orca Screen reader
 ## Add -> Artha
 # Login to chrome to sync up bookmarks and others
+# Disable bluetooth on startup:
+## Update /etc/rc.local
+### rfkill block bluetooth
 # Sublime Text 3:
 ## Add key, if applicable
 ## Plugins:
