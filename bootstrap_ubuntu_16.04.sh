@@ -35,9 +35,10 @@ sudo apt-fast install -f
 
 # Sublime Text Editor 3
 echo -e '\033[0;32m=====Installing Sublime Text Editor=====\033[0m'
-sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-fast update
-sudo apt-fast -y install sublime-text-installer
+sudo apt-fast -y install sublime-text
 cp "${PACKAGES}/Sublime Text 3/Default (Linux).sublime-keymap" ~/.config/sublime-text-3/Packages/User/
 cp "${PACKAGES}/Sublime Text 3/Preferences.sublime-settings" ~/.config/sublime-text-3/Packages/User/
 sudo sed -i 's/gedit.desktop/sublime-text.desktop/g' /etc/gnome/defaults.list
