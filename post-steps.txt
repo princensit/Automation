@@ -67,3 +67,8 @@ Post steps:
 ## export IBUS_ENABLE_SYNC_MODE=1
 # Update .zshrc
 ## plugins=(mvn git git-extras colored-man-pages z aws sudo pip)
+# eval 'gsettings set' $line
+## com.canonical.indicator.keyboard visible false
+## org.gnome.desktop.interface clock-format 12h
+## org.gnome.desktop.interface clock-show-date true
+## org.gnome.nautilus.preferences sort-directories-first true
