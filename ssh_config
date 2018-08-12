@@ -1,0 +1,16 @@
+######################
+# Github             #
+######################
+
+# Prince personal account
+Host github.com-prince
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_prince
+
+######################
+# SSH Tunnel         #
+######################
+
+Host    prince-tunnel
+ProxyCommand ssh prince-server exec nc %h %p
