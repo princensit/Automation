@@ -1,0 +1,14 @@
+*~
+/target
+/logs
+/.git
+/.metadata
+/.settings
+/.classpath
+/.project
+/.idea/*
+/.idea2/*
+*.iml
+data/*
+upload.msg
+

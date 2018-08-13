@@ -1,0 +1,26 @@
+[global_config]
+  enabled_plugins = InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, MavenPluginURLHandler, LaunchpadBugURLHandler
+  inactive_color_offset = 1.2
+[keybindings]
+  next_tab = <Primary>Right
+  prev_tab = <Primary>Left
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#300a24"
+    background_image = None
+    custom_command = zsh
+    font = Monospace 11
+    foreground_color = "#ffffff"
+    scroll_on_output = False
+    scrollback_infinite = True
+    use_custom_command = True
+    use_system_font = False
