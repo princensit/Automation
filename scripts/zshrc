@@ -1,0 +1,99 @@
+
+plugins=(mvn gradle git git-extras colored-man-pages z aws sudo pip extract update-repo go golang redis-cli)
+
+export M3_HOME=/usr/local/apache-maven-3.5.4
+export M3=$M3_HOME/bin
+export PATH=$M3:$PATH
+export GRADLE_HOME=/usr/local/gradle-4.4.1
+export GRADLE=$GRADLE_HOME/bin
+export PATH=$GRADLE:$PATH
+export JAVA_HOME=/usr/lib/jvm/default-java
+export PATH=$JAVA_HOME/bin:$PATH
+export JRE_HOME=$JAVA_HOME/jre
+export PATH=$JRE_HOME:$PATH
+export ANDROID_HOME=/usr/local/android-sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export MONGODB_HOME=/usr/local/mongodb
+export PATH=$MONGODB_HOME/bin:$PATH
+export SCALA_HOME=/usr/local/scala-2.11.8
+export PATH=$SCALA_HOME/bin:$PATH
+export SPARK_HOME=/usr/local/spark-1.6.1-bin-hadoop2.6
+export PATH=$SPARK_HOME/bin:$PATH
+export SPARK_CLASSPATH=$SPARK_HOME/lib/mysql-connector-java-5.1.38-bin.jar
+export EDITOR=vim
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/yjp
+export LD_LIBRARY_PATH
+export GOPATH=/usr/local/go/install_packages
+export PATH=$PATH:/usr/local/go/bin:/usr/local/go/install_packages/bin
+
+HISTIGNORE="ls:cd:exit:free -m"
+
+alias ls='ls -lFh --full-time --color=auto'
+alias grep='LANG=C grep --color'
+alias tree='tree -Dauh'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias clr='rm ~/.local/share/recently-used.xbel'
+alias less='less -r'
+alias watch_top_processes='watch -d "ps aux | sort -rk 3,3 | head -n 10"'
+alias nload='nload -m -u K wlan0 ppp0'
+alias speed_test='wget --output-document=/dev/null http://speedtest.wdc01.softlayer.com/downloads/test500.zip'
+alias du_sort='du -sh * | sort -k1,1rh'
+alias df='f(){ df ${1} | awk '"'"'NR==1;NR>1{print|"sort -k5rn"}'"'"'}; f'
+alias secure_delete='shred -vuzn 3 '
+alias export_java8='export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_181 && export PATH=$JAVA_HOME/bin:$PATH'
+alias start_http_server='http-server -p 9060'
+alias start_python_server='python -m SimpleHTTPServer 9060'
+alias fix_mouse='sudo modprobe -r psmouse; sudo modprobe psmouse proto=imps'
+alias fix_keyboard='ibus-daemon -rd'
+alias fix_suspend='sudo rmmod e1000e'
+alias fix_ethernet='sudo modprobe e1000e'
+alias mysql_root='mysql -uroot -proot'
+alias mysql_root_processlist='f(){ mysqladmin -uroot -proot -i ${1:-1} processlist ${2:-} ${3:-}; }; f'
+alias strong_password="cat /dev/urandom | tr -dc 'a-zA-Z0-9-\!@#$%^&*()_+~' | fold -w 10 | head -n 1"
+alias ngrok_start='f(){ ngrok -proto https -subdomain prince-dev ${1:-80}; }; f'
+alias save_flv='mkdir -p ~/Downloads/Flash && sudo tree -f /proc/[0-9]*/fd | grep -i flash | cut -d " " -f 2 | xargs -I{} sudo cp "{}" ~/Downloads/Flash && sudo chown "$USER:$USER" ~/Downloads/Flash/* 2>/dev/null && for x in ~/Downloads/Flash/*; do mv -f "${x%.*}" "$x.flv" 2>/dev/null; done'
+alias youtube-dl='youtube-dl --write-auto-sub'
+alias youtube-dl-song='f(){ youtube-dl -x --audio-format mp3 ${1}; }; f'
+alias update_upgrade='sudo apt-fast update && sudo apt-fast -y upgrade && sudo apt-fast autoclean && sudo apt-fast -y autoremove && sudo apt-fast -f install'
+alias traffic='sudo nethogs wlp2s0'
+alias wget_recursive_download='f(){ wget -c -r --no-parent --reject "index.html*" ${1}; }; f'
+alias wget_site='f(){ wget -ckmpHN -D ${1} ${1}; }; f'
+alias kill_intellij="ps aux | grep idea | grep -v grep | tr -s ' ' | cut -d ' ' -f 2 | xargs kill -9"
+alias kill_chrome="ps aux | grep chrome | grep -v grep | tr -s ' ' | cut -d ' ' -f 2 | xargs kill -9"
+alias kill_cisco="ps aux | grep cisco | grep -v grep | tr -s ' ' | cut -d ' ' -f 2 | sudo xargs kill -9"
+alias kill_skype="killall skypeforlinux -s 9"
+alias kill_process='f(){ ps ax | grep "${1}" | grep -v grep | awk '"'"'{print $1}'"'"' | xargs sudo kill -9; }; f'
+alias weather='curl wttr.in'
+
+# Get readable list of network IPs
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+alias myip="curl wgetip.com"
+alias flush="dscacheutil -flushcache" # Flush DNS cache
+
+alias git_pull='cd ~/codebase; for x in *; do echo $x; cd $x && git pull 2> >(while read line; do echo -e "\e[01;31m$line\e[0m" >&2; done) || true && cd ..; done;'
+
+alias extract_domain_from_instrument='f() { echo $1 | base64 --decode | cut -d ":" -f 3 }; f'
+alias extract_instrument_from_account='f() { echo $1 | base64 --decode | cut -d ":" -f 1 }; f'
+
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
+
+alias speedtest-cli='speedtest-cli --bytes'
+#alias mvn="mvn-color"
+alias mvn="mvn -Dhttps.protocols=TLSv1.2"
+alias net_alive='ping -i 60 -a www.google.com'
+alias transpose='awk -F, '"'"'{for (i=1; i<=NF; i++) a[i,NR]=$i; max=(max<NF?NF:max)} END {for (i=1; i<=max; i++) {for (j=1; j<=NR; j++) printf "%s%s", a[i,j], (j==NR?RS:FS)}}'"'"''
+alias shrug_emoticon="echo '¯\_(ツ)_/¯'"
+alias heap_dump='f() { jmap -dump:format=b,file=$1pid_heap_dump_$(date +%Y%m%d).bin $1 }; f'
+alias thread_dump='f() { jstack -l $1 > $1pid_thread_dump_$(date +%Y%m%d).log }; f'
+alias pdf_decrypt='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=unencrypted.pdf -c .setpdfwrite -f '
+alias trace_http_calls='sudo tcpdump -i wlp2s0'
+alias trace_http_calls_2='sudo tcpflow -p -c -i wlp2s0'
+alias take_pic="streamer -f jpeg -o ~/Pictures/image_$((1 + RANDOM % 1000)).jpeg"
+
+alias dynamodb_local='java -Djava.library.path=/usr/local/dynamodb_local_latest/DynamoDBLocal_lib -jar /usr/local/dynamodb_local_latest/DynamoDBLocal.jar -sharedDb'
+
+export GIT_MERGE_AUTOEDIT=no
