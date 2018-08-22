@@ -239,6 +239,9 @@ echo -e '\033[0;32m===== Installing WebTorrent =====\033[0m'
 nkdir -p "${PACKAGES}/WebTorrent/"
 wget https://github.com/webtorrent/webtorrent-desktop/releases/download/v0.20.0/webtorrent-desktop_0.20.0-1_amd64.deb -P "${PACKAGES}/WebTorrent/"
 sudo dpkg -i "${PACKAGES}/WebTorrent/webtorrent-desktop_0.20.0-1_amd64.deb"
+xdg-mime query default x-scheme-handler/magnet
+xdg-mime default webtorrent-desktop.desktop x-scheme-handler/magnet
+xdg-mime query default x-scheme-handler/magnet
 
 # Install ADB And Fastboot Android Tools
 echo -e '\033[0;32m===== Installing adb =====\033[0m'
