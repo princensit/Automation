@@ -315,5 +315,8 @@ sudo usermod -aG docker ${USER}
 sudo add-apt-repository -y ppa:sylvain-pineau/kazam
 sudo apt-fast -y install kazam
 
+# Install terminalizer to record terminal commands
+sudo npm install -g terminalizer --unsafe-perm
+
 # Enable minimise on click for the Ubuntu Dock
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
