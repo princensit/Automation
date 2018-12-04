@@ -19,14 +19,18 @@ Post steps:
 # Sublime Text 3:
 ## Add key, if applicable
 ## Plugins:
+### BracketHighlighter
 ### Case Conversion
-### Compare Side-By-Side
-### Javascript Beautify
+### FileDiffs
 ### JsFormat
 ### Side Bar
+### Sync Settings
+### TerminalView
 ### Text Pastry
 ### Word Count
+### HTML/CSS/JS Prettify
 ### orgmode
+### Pretty JSON
 ## View side bar
 # Beyond Compare 3
 ## Add key if applicable
