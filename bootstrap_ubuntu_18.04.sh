@@ -58,9 +58,13 @@ echo -e '\033[0;32m===== Installing vim =====\033[0m'
 sudo add-apt-repository -y ppa:jonathonf/vim
 sudo apt-fast -y install vim
 
+# UNetbootin
+sudo add-apt-repository ppa:gezakovacs/ppa
+sudo apt-fast -y install unetbootin
+
 # Essential packages
 echo -e '\033[0;32m===== Installing essential packages =====\033[0m'
-sudo apt-fast -y install ntp curl sysstat htop tree nload wavemon iptraf nethogs nmon screen unetbootin mutt meld artha subversion ubuntu-restricted-extras wine64 gimp gparted libav-tools python-pip gnome-tweak-tool sshpass net-tools nmap
+sudo apt-fast -y install ntp curl sysstat htop tree nload wavemon iptraf nethogs nmon screen mutt meld artha subversion ubuntu-restricted-extras wine64 gimp gparted libav-tools python-pip gnome-tweak-tool sshpass net-tools nmap
 
 # Upgrade nautilus
 echo -e '\033[0;32m===== Upgrading nautilus =====\033[0m'
