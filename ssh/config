@@ -1,4 +1,18 @@
 ######################
+# General Config     #
+######################
+
+Host *
+ControlMaster auto
+ControlPath ~/.ssh/master-%r@%h:%p
+ControlPersist 4h
+ForwardAgent yes
+GSSAPIAuthentication no
+ServerAliveCountMax 10
+ServerAliveInterval 60
+TCPKeepAlive no
+
+######################
 # Github             #
 ######################
 

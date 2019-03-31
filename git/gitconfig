@@ -1,0 +1,29 @@
+[http]
+        postBuffer = 889192448
+[user]
+        name = Prince Raj
+        email = <email-id>
+[alias]
+        cp = cherry-pick
+        st = status
+        co = checkout
+        br = branch
+        ci = commit
+        log = log --graph
+        lg = log --graph --all --decorate
+        lg2 = log --graph --oneline --all --decorate
+        fl = log -u
+        sl = stash list
+        sa = stash apply
+        ss = stash save
+        alias = config --get-regexp 'alias.*'
+[core]
+        autocrlf = input
+        editor = vim
+[push]
+        default = upstream
+[pull]
+        rebase = true
+[branch]
+        autosetuprebase = always
+        mergeoptions = --no-ff
