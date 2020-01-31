@@ -320,5 +320,8 @@ sudo apt-fast -y install kazam
 # Install terminalizer to record terminal commands
 sudo npm install -g terminalizer --unsafe-perm
 
+# Install Broot (A better way to navigate directories)
+sudo install broot /usr/local/bin
+
 # Enable minimise on click for the Ubuntu Dock
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
