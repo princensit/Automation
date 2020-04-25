@@ -118,8 +118,10 @@ sudo service apache2 restart
 
 # AWS cli
 echo -e '\033[0;32m===== AWS CLI =====\033[0m'
-sudo apt-fast -y install awscli
-sudo pip install --upgrade awscli
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update
 
 # Youtube-dl
 echo -e '\033[0;32m===== Installing youtube-dl =====\033[0m'
