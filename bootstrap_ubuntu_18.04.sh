@@ -321,7 +321,9 @@ sudo apt-fast -y install kazam
 sudo npm install -g terminalizer --unsafe-perm
 
 # Install Broot (A better way to navigate directories)
-sudo install broot /usr/local/bin
+echo "deb http://packages.azlux.fr/debian/ buster main" | sudo tee /etc/apt/sources.list.d/azlux.list
+wget -qO - https://azlux.fr/repo.gpg.key | sudo apt-key add -
+sudo apt-fast -y install broot
 
 # Enable minimise on click for the Ubuntu Dock
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
