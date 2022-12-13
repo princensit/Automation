@@ -4,9 +4,13 @@ plugins=(mvn gradle git git-extras colored-man-pages z aws sudo pip extract upda
 export M3_HOME=/usr/local/apache-maven-3.5.4
 export M3=$M3_HOME/bin
 export PATH=$M3:$PATH
+# export MAVEN_HOME=/usr/share/maven
+# export PATH=$MAVEN_HOME/bin:$PATH
 export GRADLE_HOME=/usr/local/gradle-4.4.1
 export GRADLE=$GRADLE_HOME/bin
 export PATH=$GRADLE:$PATH
+# export GRADLE_HOME=/snap/gradle/current/opt/gradle/
+# export PATH=$GRADLE_HOME/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/default-java
 export PATH=$JAVA_HOME/bin:$PATH
 export JRE_HOME=$JAVA_HOME/jre
@@ -94,6 +98,9 @@ alias trace_http_calls='sudo tcpdump -i wlp2s0'
 alias trace_http_calls_2='sudo tcpflow -p -c -i wlp2s0'
 alias take_pic="streamer -f jpeg -o ~/Pictures/image_$((1 + RANDOM % 1000)).jpeg"
 
-alias dynamodb_local='java -Djava.library.path=/usr/local/dynamodb_local_latest/DynamoDBLocal_lib -jar /usr/local/dynamodb_local_latest/DynamoDBLocal.jar -sharedDb'
+# alias dynamodb_local='java -Djava.library.path=/usr/local/dynamodb_local_latest/DynamoDBLocal_lib -jar /usr/local/dynamodb_local_latest/DynamoDBLocal.jar -sharedDb'
+alias dynamodb_local='docker run -p 8000:8000 amazon/dynamodb-local'
 
 export GIT_MERGE_AUTOEDIT=no
+
+source /home/prince/.config/broot/launcher/bash/br
