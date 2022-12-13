@@ -160,7 +160,6 @@ sudo snap install gradle --classic
 
 # JDK
 sudo snap install openjdk-8-jdk openjdk-11-jdk openjdk-17-jdk
-# sudo update-alternatives --config java
 
 # IntelliJ IDEA
 sudo snap install intellij-idea-ultimate --classic
