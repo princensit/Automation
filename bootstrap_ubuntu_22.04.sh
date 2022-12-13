@@ -39,6 +39,12 @@ sudo apt-fast install -f
 
 # snapd
 sudo apt-fast -y install snapd
+# sudo snap set system refresh.retain=2
+# sudo snap list
+# sudo snap list --all
+# snap snap remove <package> --purge
+# sudo snap refresh --list
+# snap changes
 
 # Essential packages using apt
 # Enable netspeed using gnome-shell-extension-manager
