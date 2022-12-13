@@ -98,8 +98,13 @@ wget https://desktop.docker.com/linux/main/amd64/docker-desktop-4.15.0-amd64.deb
 sudo apt install ./docker-desktop-4.15.0-amd64.deb
 
 # MySQL
-docker pull mysql:8.0
-sudo mkdir -p /var/lib/mysql
+docker pull mysql:8
+sudo apt-fast -y install mysql-client
+mkdir -p /home/prince/codebase/docker-config/mysql_config/mysql_v8/conf.d
+touch /home/prince/codebase/docker-config/mysql_config/mysql_v8/conf.d/my-custom.cnf
+mkdir -p /home/prince/codebase/docker-config/mysql_data
+# docker run --detach --name mysql_v8 --publish 3306:3306 --env="MYSQL_ROOT_PASSWORD=root" --volume=/home/prince/codebase/docker-config/mysql_config/mysql_v8/conf.d:/etc/mysql/conf.d --volume=/home/prince/codebase/docker-config/mysql_data:/var/lib/mysql mysql:8
+# mysql -h 127.0.0.1 -u root -p
 
 # DynamoDB
 docker pull amazon/dynamodb-local
