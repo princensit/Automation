@@ -78,9 +78,42 @@ sudo apt-fast -y install android-tools-adb android-tools-fastboot
 sudo apt-fast -y install webtorrent-desktop
 
 # Install Broot (A better way to navigate directories)
-echo "deb http://packages.azlux.fr/debian/ buster main" | sudo tee /etc/apt/sources.list.d/azlux.list
-wget -qO - https://azlux.fr/repo.gpg.key | sudo apt-key add -
+echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ stable main" | sudo tee /etc/apt/sources.list.d/azlux.list
+sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
+sudo apt-fast update
 sudo apt-fast -y install broot
+# broot
+
+# Docker
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-fast update
+sudo apt-fast -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+sudo systemctl status docker
+wget https://desktop.docker.com/linux/main/amd64/docker-desktop-4.15.0-amd64.deb
+sudo apt install ./docker-desktop-4.15.0-amd64.deb
+
+# MySQL
+docker pull mysql:8.0
+sudo mkdir -p /var/lib/mysql
+
+# DynamoDB
+docker pull amazon/dynamodb-local
+# alias dynamodb_local='docker run -p 8000:8000 amazon/dynamodb-local'
+
+# Dive (A tool for exploring each layer in a docker image)
+sudo apt-fast -y install dive
+
+# ctop (Top-like interface for container metrics)
+sudo apt-fast -y install ctop
+
+# webhookd (webhook server launching shell scripts)
+# https://github.com/ncarlier/webhookd
+sudo apt-fast -y install webhookd
 
 # Slack, Zoom
 sudo snap install slack zoom-client
