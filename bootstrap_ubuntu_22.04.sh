@@ -55,6 +55,7 @@ sudo apt-fast -y install vim ntp tree net-tools gnome-shell-extension-manager gi
 # Essential packages using snap
 echo -e '\033[0;32m===== Installing essential packages using snap =====\033[0m'
 sudo snap install git-standup ffmpeg nmap firefox libreoffice ngrok net-toolbox vlc youtube-dl sublime-text jq
+# mv ~/snap/firefox/common/.mozilla ~/.mozilla
 
 # zsh
 echo -e '\033[0;32m===== Installing zsh =====\033[0m'
