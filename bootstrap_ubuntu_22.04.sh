@@ -39,13 +39,13 @@ sudo apt-fast install -f
 
 # snapd
 sudo apt-fast -y install snapd
-sudo snap set system experimental.refresh-app-awareness=true
 # sudo snap set system refresh.retain=2
 # sudo snap list
 # sudo snap list --all
 # snap snap remove <package> --purge
 # sudo snap refresh --list
 # snap changes
+# sudo snap set system experimental.refresh-app-awareness=true
 
 # Essential packages using apt
 # Enable netspeed using gnome-shell-extension-manager
@@ -54,8 +54,7 @@ sudo apt-fast -y install vim ntp tree net-tools gnome-shell-extension-manager gi
 
 # Essential packages using snap
 echo -e '\033[0;32m===== Installing essential packages using snap =====\033[0m'
-sudo snap install git-standup ffmpeg nmap firefox libreoffice ngrok net-toolbox vlc youtube-dl sublime-text jq
-# mv ~/snap/firefox/common/.mozilla ~/.mozilla
+sudo snap install git-standup ffmpeg nmap libreoffice ngrok net-toolbox vlc youtube-dl sublime-text jq
 
 # zsh
 echo -e '\033[0;32m===== Installing zsh =====\033[0m'
@@ -64,6 +63,18 @@ sudo sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.s
 wget -c https://raw.githubusercontent.com/rupa/z/master/z.sh
 chmod +x z.sh
 sudo mv z.sh /usr/local/bin
+
+# Firefox
+sudo snap remove firefox
+sudo add-apt-repository -y ppa:mozillateam/ppa
+echo '
+Package: *
+Pin: release o=LP-PPA-mozillateam
+Pin-Priority: 1001
+' | sudo tee /etc/apt/preferences.d/mozilla-firefox
+echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
+sudo apt-fast update
+sudo apt-fast -y install firefox
 
 # Terminator
 echo -e '\033[0;32m===== Installing terminator =====\033[0m'
