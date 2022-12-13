@@ -39,6 +39,7 @@ sudo apt-fast install -f
 
 # snapd
 sudo apt-fast -y install snapd
+sudo snap set system experimental.refresh-app-awareness=true
 # sudo snap set system refresh.retain=2
 # sudo snap list
 # sudo snap list --all
