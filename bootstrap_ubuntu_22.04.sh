@@ -170,3 +170,6 @@ sudo snap install openjdk-8-jdk openjdk-11-jdk openjdk-17-jdk
 
 # IntelliJ IDEA
 sudo snap install intellij-idea-ultimate --classic
+
+# Android Studio
+sudo snap install android-studio --classic
