@@ -173,3 +173,7 @@ sudo snap install intellij-idea-ultimate --classic
 
 # Android Studio
 sudo snap install android-studio --classic
+# Enable kvm acceleration: https://developer.android.com/studio/run/emulator-acceleration#vm-linux
+egrep -c '(vmx|svm)' /proc/cpuinfo
+kvm-ok
+sudo apt-fast install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
