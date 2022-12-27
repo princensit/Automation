@@ -54,7 +54,7 @@ sudo apt-fast -y install vim ntp tree net-tools gnome-shell-extension-manager gi
 
 # Essential packages using snap
 echo -e '\033[0;32m===== Installing essential packages using snap =====\033[0m'
-sudo snap install git-standup ffmpeg nmap libreoffice ngrok net-toolbox vlc youtube-dl sublime-text jq
+sudo snap install git-standup ffmpeg nmap libreoffice ngrok net-toolbox vlc youtube-dl jq
 
 # zsh
 echo -e '\033[0;32m===== Installing zsh =====\033[0m'
@@ -63,6 +63,13 @@ sudo sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.s
 wget -c https://raw.githubusercontent.com/rupa/z/master/z.sh
 chmod +x z.sh
 sudo mv z.sh /usr/local/bin
+
+# Sublime Text Editor
+sudo apt-fast install apt-transport-https
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/sublimehq-pub.gpg
+echo "deb [signed-by=/usr/share/keyrings/sublimehq-pub.gpg] https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-fast update
+sudo apt-fast install sublime-text
 
 # Firefox
 sudo snap remove firefox
